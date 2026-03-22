@@ -1,1 +1,179 @@
+:root{
+  --maxw: 1050px;
+  --overlay: rgba(8, 12, 18, 0.62);
+  --card: rgba(255,255,255,0.94);
+  --text: #0b1220;
+  --muted: #4b5563;
+  --link: #0b5fff;
 
+  --caltech-orange: #ff6a00;
+  --caltech-red: #c8102e;
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #fff;
+  background:
+    linear-gradient(var(--overlay), var(--overlay)),
+    url("assets/merkin-center.jpg") center/cover no-repeat fixed;
+}
+
+a{ color: #dbeafe; }
+a:hover{ text-decoration: none; }
+
+.container{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+.header{
+  padding: 18px 0 8px 0;
+}
+.topbar{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.nav{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.nav a{
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 999px;
+  text-decoration: none;
+}
+.nav a[aria-current="page"]{
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.55);
+}
+
+.logo-slot{
+  width: 150px;
+  min-width: 120px;
+  display: flex;
+  justify-content: flex-end;
+}
+.logo-slot img{
+  max-width: 150px;
+  max-height: 54px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.35));
+  border-radius: 8px;
+}
+.logo-placeholder{
+  width: 150px;
+  height: 54px;
+  border: 1px dashed rgba(255,255,255,0.55);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: rgba(255,255,255,0.85);
+  font-size: 12px;
+  text-align: center;
+  padding: 6px;
+}
+
+.hero{
+  padding: 14px 0 22px 0;
+}
+.hero h1{
+  margin: 8px 0 10px 0;
+  font-size: clamp(28px, 4vw, 46px);
+  line-height: 1.12;
+}
+.hero .subtitle{
+  margin: 0;
+  max-width: 85ch;
+  color: rgba(255,255,255,0.92);
+}
+.badges{
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.badge{
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.95);
+  font-size: 13px;
+}
+
+.main{
+  padding: 0 0 28px 0;
+}
+.grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 900px){
+  .grid{ grid-template-columns: 1.2fr 0.8fr; }
+}
+
+.card{
+  background: var(--card);
+  color: var(--text);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+.card h2{
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+.muted{ color: var(--muted); }
+.small{ font-size: 13px; }
+
+.list{
+  margin: 8px 0 0 18px;
+  padding: 0;
+}
+.list li{ margin: 7px 0; }
+
+.table{
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+}
+.table th, .table td{
+  padding: 10px;
+  border-bottom: 1px solid rgba(17,24,39,0.10);
+  vertical-align: top;
+}
+.table th{
+  text-align: left;
+  font-size: 13px;
+  background: rgba(17,24,39,0.05);
+}
+.table td a{ color: var(--link); }
+
+.footer{
+  padding: 12px 0 26px 0;
+  color: rgba(255,255,255,0.85);
+  font-size: 13px;
+}
+.hr{
+  height: 1px;
+  background: rgba(255,255,255,0.18);
+  margin: 14px 0;
+}
